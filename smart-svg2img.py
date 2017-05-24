@@ -8,7 +8,7 @@ import os
 from frame.logHelper import LogHelper
 
 app = Flask(__name__)
-
+app.config.from_object("frame.config")
 logger = LogHelper().logger
 
 
@@ -19,7 +19,7 @@ def hello_world():
     result = {"status": "error", "data": ""}
     if datas:
         today = time.strftime("%Y-%m-%d")
-        png_temp_path = os.path.join('/home/zhangshaofu/MyProject/smartEye-customer/web/static-v2',
+        png_temp_path = os.path.join(app.config.get('SMARTEYE_TEMP_URL'),
                                      'temp/temp-' + today + '/')
         for data in datas:
             if "content" in data:
