@@ -30,7 +30,7 @@ def hello_world():
                                      write_to=png_temp_path + uuid + ".png")
                     data["url"] = png_temp_path + uuid + ".png"
                 except:
-                    logger.exception('current data' + data + ' .svg2png exception :')
+                    logger.exception('current data' + str(data) + ' .svg2png exception :')
                     data["url"] = ""
         result["data"] = datas
         result["status"] = "ok"
