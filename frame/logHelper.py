@@ -25,5 +25,5 @@ class LogHelper(object):
     file_handler = TimedRotatingFileHandler(logfile, 'midnight', backupCount=15)
     file_handler.setFormatter(
         logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
-    file_handler.suffix = "%Y%m%d.log"
+    # file_handler.suffix = "%Y%m%d.log"
     logger.addHandler(file_handler)
