@@ -1,3 +1,6 @@
 .idea
 config.py
 py3env
+log
+temp-*
+*.log
